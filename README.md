@@ -1,6 +1,3 @@
-# happyhome_wiki
-happyhome wiki
+happyhome_wiki
 
-this is a wiki app built by angularJS 1
-test2
-test3
+this is a readme file right?
