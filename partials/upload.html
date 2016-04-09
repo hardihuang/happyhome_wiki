@@ -1,0 +1,95 @@
+
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">上传新资料</h4>
+      </div>
+      <div class="modal-body">
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
+          
+
+          <input type="text" class="form-control" id="upload_title" placeholder="资料名称" name="title" data-toggle="tooltip" data-placement="left" title="请填写资料名">
+
+          <textarea class="form-control" rows="2" id="upload_description" placeholder="资料描述" name="description"></textarea>
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="file">资料：</label>
+              <input type="file" id="upload_file" name="file" data-toggle="tooltip" data-placement="left" title="请选择要上传的资料" data-trigger="manual">
+              <p class="help-block " id="upload_file_text">请选择您要上传的文件</p>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="img">配图：</label>
+              <input type="file" id="upload_img" name="img">
+              <p class="help-block" id="upload_img_text">请为文件添加一张图片</p>
+            </div>
+          </div> <!-- row end -->
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="subject">科目：</label>
+              <select class="form-control" id="upload_subject" name="subject">
+                <option value="1" name="数学">数学</option>
+                <option value="2" name="物理">物理</option>
+                <option value="3" name="化学">化学</option>
+                <option value="4" name="英语">英语</option>
+                <option value="5" name="地理">地理</option>
+                <option value="6" name="生物">生物</option>
+                <option value="7" name="电脑">电脑</option>
+              </select>
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="grade">年级：</label>
+              <select class="form-control" id="upload_grade" name="grade">
+                <option value="1" name="初一">初一</option>
+                <option value="2" name="初二">初二</option>
+                <option value="3" name="初三">初三</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <label for="img">学期：</label>
+              <select class="form-control" id="upload_term" name="term">
+                <option value="1" data-name="上学期" name="上学期">上学期</option>
+                <option value="2" data-name="下学期" name="下学期">下学期</option>
+              </select>
+            </div>
+            <div class="col-md-6 form-group">
+              <label for="img">类型：</label>
+              <select class="form-control" id="upload_type" name="type">
+                <option value="1" name="课件">课件</option>
+                <option value="2" name="资料">资料</option>
+                <option value="3" name="视频">视频</option>
+                <option value="4" name="答案">答案</option>
+                <option value="5" name="学校考卷">学校考卷</option>
+                <option value="6" name="测试题">测试题</option>
+              </select>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="progress" id="uploadPregressWrap" style="display:none">
+          <div id="uploadProgress" class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+            <span class="sr-only">45% Complete</span>
+          </div>
+        </div>
+        <h3 id="status"></h3>
+        <p id="loaded_n_total"></p>
+
+      </div> <!-- modal body end -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-info" ng-click="uploadValidate()">
+        上传 
+        <span class="glyphicon glyphicon-circle-arrow-up"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div><!-- model end -->

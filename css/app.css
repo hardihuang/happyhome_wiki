@@ -1,0 +1,79 @@
+body{
+	background-color: #FAFAFA;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'STHeiti', 'Microsoft Yahei', 'sans-serif'
+}
+.navbar{
+	border-bottom: 1px solid #FF9999;
+	background-color: rgba(255,255,255,0.95);
+}
+.body_container{
+	margin-top: 80px;
+}
+.navbar-brand > img{
+	width: 25px;
+	float: left;
+	margin-top: -2px;
+}
+.navbar-brand > h2{
+	font-size: 20px;
+	margin:0;
+	padding-left: 30px;
+}
+
+.wiki_card > img{
+	height: 150px;
+	width: 100%;
+	border-radius: 4px 4px 0 0;
+}
+.caption > h3{
+	margin-top: 10px;
+	height: 26px;
+	/*height: 52px; 双行*/
+    overflow: hidden;
+}
+.wiki_card_desc{
+	height: 20px;
+	overflow: hidden;
+}
+
+.form-control:focus {
+  border-color: rgba(255,153,153,0.6);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(255,153,153,0.5);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(255,153,153,0.5);
+}
+
+#uploadModal > .form-group{
+	margin: 8px 0;
+}
+#uploadForm > textarea{
+	margin: 8px 0;
+}
+#uploadModal .progress{
+	margin: 10px 0 0 0 ;
+}
+
+.progress-bar {
+  -webkit-transition: width .5s ease;
+       -o-transition: width .5s ease;
+          transition: width .5s ease;
+}
+.glyphicon{
+	top:2px;
+}
+
+#manageAlert{
+	margin-top: -10px;
+}
+
+.alertMsg{
+	position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 150px;
+    z-index: 100;
+}
+
+
+/*animation*/
+

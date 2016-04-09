@@ -1,0 +1,73 @@
+<div ng-controller="alert" ng-include="'partials/alert.html'" ng-init="getData()"></div>
+<!-- {{NavFilter.search}} filter 条件 -->
+<div id="wiki-card-append" class="hide"></div>
+
+<div class="alert alert-success alertMsg" id="info-alert" role="alert" style="display:none"><center class="center"></center></div>
+
+<div id="wiki_cards_wrap" ng-repeat="content in contents | filter:NavFilter.search "  popover>
+  
+  <div class="col-md-3" id="wiki_{{content.id}}">
+      <div class="thumbnail wiki_card">
+        <img ng-src="upload/thumb/{{content.img}}">
+        <div class="caption">
+          <h3 title="{{content.title}}">{{content.title}}</h3>
+          <p class="wiki_card_desc" title="{{content.description}}">{{content.description}}</p>
+          <!-- <p>term: {{content.term}}</p>
+          <p>subject: {{content.subject}}</p>
+          <p>type: {{content.type}}</p>
+          <p>grade: {{content.grade}}</p>
+          <p>date: {{content.date}}</p>
+          <p>img: {{content.img}}</p> -->
+          <p>
+            <a href="upload/files/{{content.file}}" class="btn btn-info" target="_blank" role="button" >
+              <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>&nbsp;下载
+            </a>
+            <button 
+              type="button" 
+              class="btn btn-default pull-right" 
+              data-toggle="popover" 
+              title="详细信息" 
+              data-trigger="hover"
+              data-content="
+                科目:{{content.subject}}<br/>
+                年级:{{content.grade}}<br/>
+                学期:{{content.term}}<br/>
+                类型:{{content.type}}<br/>
+                上传时间:{{content.date}}
+              ">
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            </button>
+          </p>
+          <p class="mamage_btn" style="display: none">
+            <button type="button" class="btn btn-warning"
+              ng-click="editContent()"
+              data-toggle="modal" 
+              data-target="#uploadModal"
+              data-edit_id="{{content.id}}"
+              data-edit_title="{{content.title}}"
+              data-edit_description="{{content.description}}"
+              data-edit_subject="{{content.subject}}"
+              data-edit_grade="{{content.grade}}"
+              data-edit_term="{{content.term}}"
+              data-edit_type="{{content.type}}"
+              data-edit_file="{{content.file}}"
+              data-edit_img="{{content.img}}"
+            >
+              <span class="glyphicon glyphicon-edit"></span>
+              修改
+            </button>
+            <button type="button" class="btn btn-danger pull-right deleteBtn" 
+              ng-click="deleteContent()" 
+              data-toggle="modal" 
+              data-target="#deleteModal" 
+              data-delete_name="{{content.title}}"
+              data-delete_id="{{content.id}}">
+              <span class="glyphicon glyphicon-remove-sign"></span>
+              删除
+            </button>
+            </p>
+        </div>
+      </div>
+  </div>
+</div> <!-- ng-repeat end -->
+<div ng-include="'partials/delete.html'"></div>

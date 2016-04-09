@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>快乐学习营-资料库</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="img/favicon.ico" rel="bookmark" type="image/x-icon" /> 
+        <link href="img/favicon.ico" rel="icon" type="image/x-icon" /> 
+        <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body ng-app="app">
+
+        <div ng-controller="nav-filter">
+            <nav class="navbar navbar-default navbar-fixed-top" ng-include="'partials/nav.html'"></nav>
+        </div>
+          
+        <div ng-controller="wiki-content">
+            <div class="container body_container" ng-include="'partials/content.html'"></div>
+        </div>
+
+        <div ng-controller="upload">
+            <div ng-include="'partials/upload.html'" onload="uploadIncluded()"></div>
+        </div>
+
+        
+        <script src="js/lib/jquery.min.js"></script>
+        <script src="js/lib/bootstrap.js"></script>
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/navFilter.controller.js"></script>
+        <script src="js/wikiContent.controller.js"></script>
+        <script src="js/upload.controller.js"></script>
+        <script src="js/alert.controller.js"></script>
+        <script>
+            function _(el){
+              return document.getElementById(el);
+            };
+        </script>
+    </body>
+</html>
+
