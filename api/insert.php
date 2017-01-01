@@ -43,7 +43,7 @@ if(isset($_FILES['img'])){
 }
 
 unset($arr['fileName']);
-$arr['date']=date('o-m-d H:i:s');
+$arr['date']=date('Y-m-d H:i:s');
 
 // return print_r($arr);
 
